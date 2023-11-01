@@ -16,7 +16,7 @@ namespace StoreProducts.WebApi.Controllers
         {
             _mediator = mediator;
         }
-
+        [HttpPost]
         public Task<ServiceResponse<Product>> Create(ProductCommand input)
         {
             return _mediator.Send(input);
