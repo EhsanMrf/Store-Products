@@ -1,0 +1,7 @@
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.csproj.AssemblyReference.cache
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.AssemblyInfoInputs.cache
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.AssemblyInfo.cs
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.csproj.CoreCompileInputs.cache
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.MvcApplicationPartsAssemblyInfo.cs
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.MvcApplicationPartsAssemblyInfo.cache

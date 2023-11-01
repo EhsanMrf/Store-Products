@@ -1,3 +1,5 @@
+using MediatR;
+using StoreProducts.CoreService.Product.CommandHandler;
 using StoreProducts.WebApi.ProviderExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.DatabaseContext(builder.Configuration.GetSection("Connection").Value);
 builder.Services.InternalizeDataBase();
 builder.Services.InjectScope();
+
+builder.Services.AddMediatR(typeof(ProductCommandHandler));
 
 var app = builder.Build();
 

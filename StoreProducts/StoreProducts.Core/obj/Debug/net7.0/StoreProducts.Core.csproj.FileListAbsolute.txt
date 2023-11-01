@@ -3,3 +3,13 @@ E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts
 E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts.Core.AssemblyInfoInputs.cache
 E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts.Core.AssemblyInfo.cs
 E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts.Core.csproj.CoreCompileInputs.cache
+E:\StoreProducts\StoreProducts\StoreProducts.Core\bin\Debug\net7.0\StoreProducts.Core.deps.json
+E:\StoreProducts\StoreProducts\StoreProducts.Core\bin\Debug\net7.0\StoreProducts.Core.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Core\bin\Debug\net7.0\StoreProducts.Core.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Core\bin\Debug\net7.0\Common.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Core\bin\Debug\net7.0\Common.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts.Core.csproj.CopyComplete
+E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts.Core.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\refint\StoreProducts.Core.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\StoreProducts.Core.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Core\obj\Debug\net7.0\ref\StoreProducts.Core.dll

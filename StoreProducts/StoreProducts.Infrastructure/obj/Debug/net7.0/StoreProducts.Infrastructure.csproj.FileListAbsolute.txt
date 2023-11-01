@@ -3,3 +3,15 @@ E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\Sto
 E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.AssemblyInfoInputs.cache
 E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.AssemblyInfo.cs
 E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.csproj.CoreCompileInputs.cache
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\StoreProducts.Infrastructure.deps.json
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\StoreProducts.Infrastructure.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\StoreProducts.Infrastructure.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\Common.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\StoreProducts.Core.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\Common.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\bin\Debug\net7.0\StoreProducts.Core.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.csproj.CopyComplete
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\refint\StoreProducts.Infrastructure.dll
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.pdb
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\ref\StoreProducts.Infrastructure.dll
