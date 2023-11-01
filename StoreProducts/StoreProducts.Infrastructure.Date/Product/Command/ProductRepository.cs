@@ -28,4 +28,10 @@ public class ProductRepository : IProductRepository
         var serviceResponse = await _repositoryManager.Insert<Core.Product.Entity.Product>(product);
         return serviceResponse;
     }
+
+    public async Task<ServiceResponse<bool>> Update(UpdateProductCommand command)
+    {
+        await _repositoryManager.UpdateById(command.Id, command);
+        throw new NotImplementedException();
+    }
 }

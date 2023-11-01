@@ -32,15 +32,15 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         return entity;
     }
 
-    public async Task<ServiceResponse<T>> UpdateById(ServiceResponse<T> serviceEntity, TId id, T inputEntity)
+    public async Task<ServiceResponse<T>> UpdateById(TId id, object inputEntity)
     {
-        var oldEntity = await GetById(serviceEntity, id);
+        var oldEntity = await GetById(id);
         Utils.NotNull(oldEntity);
         var entity = _mapper.Map(inputEntity, oldEntity.Data);
         dbContext.Entry(entity).State = EntityState.Modified;
         var save = await dbContext.SaveChangesAsync()>0;
         Utils.StateOperation(save);
-        return serviceEntity.Data;
+        return entity;
     }
 
     public async Task<ServiceResponse<bool>> DeleteById(TId id)
@@ -52,12 +52,11 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         return await dbContext.SaveChangesAsync() > 0;
     }
 
-    public async Task<ServiceResponse<T>> GetById( ServiceResponse<T> serviceEntity, TId id)
+    public async Task<ServiceResponse<T>> GetById(TId id)
     {
         var data = await dbContext.Set<T>().Where(q => q.Id.Equals(id)).FirstOrDefaultAsync();
         Utils.NotNull(data);
-        serviceEntity.Data = data;
-        return serviceEntity.Data is not null ? serviceEntity : new ServiceResponse<T> { Data = null, Message = "No Data" };
+        return data;
     }
 }
 
@@ -65,7 +64,7 @@ public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId>
 {
     Task<bool> Insert(T entity);
     Task<ServiceResponse<T>> Insert<T>(T serviceEntity);
-    Task<ServiceResponse<T>> UpdateById( ServiceResponse<T> serviceEntity, TId id, T inputEntity);
+    Task<ServiceResponse<T>> UpdateById(TId id, object inputEntity);
     Task<ServiceResponse<bool>> DeleteById( TId id);
-    Task<ServiceResponse<T>> GetById( ServiceResponse<T> serviceEntity, TId id);
+    Task<ServiceResponse<T>> GetById(TId id);
 }
