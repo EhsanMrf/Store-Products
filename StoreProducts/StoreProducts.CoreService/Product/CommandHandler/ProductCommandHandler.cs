@@ -1,5 +1,4 @@
-﻿using Common.BaseService;
-using Common.Response;
+﻿using Common.Response;
 using MediatR;
 using StoreProducts.Core.Product.Command;
 using StoreProducts.Core.Product.RepositoryCommand;
