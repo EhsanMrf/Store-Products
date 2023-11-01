@@ -3,7 +3,7 @@ using MediatR;
 
 namespace StoreProducts.Core.Product.Command;
 
-public class ProductCommand :IRequest<ServiceResponse<Entity.Product>>
+public class CreateProductCommand :IRequest<ServiceResponse<Entity.Product>>
 {
     public string Name { get; set; }
     public string ManufacturePhone { get; set; }

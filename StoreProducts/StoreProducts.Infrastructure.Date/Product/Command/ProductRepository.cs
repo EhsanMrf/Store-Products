@@ -17,7 +17,7 @@ public class ProductRepository : IProductRepository
         _productBuilder = productBuilder;
     }
 
-    public async Task<ServiceResponse<Core.Product.Entity.Product>> Create(ProductCommand command)
+    public async Task<ServiceResponse<Core.Product.Entity.Product>> Create(CreateProductCommand command)
     {
         var product = _productBuilder.WithName(command.Name)
             .WithAvailable(command.IsAvailable)
