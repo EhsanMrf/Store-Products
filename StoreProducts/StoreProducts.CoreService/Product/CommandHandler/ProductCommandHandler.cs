@@ -25,7 +25,8 @@ public class ProductCommandHandler
 
     public async Task<ServiceResponse<bool>> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        return await _repository.Update(request);
+        var serviceResponse = await _repository.Update(request);
+        return serviceResponse;
     }
 
     public async Task<ServiceResponse<bool>> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
