@@ -28,5 +28,11 @@ namespace StoreProducts.WebApi.Controllers
         {
             return _mediator.Send(input);
         }
+        
+        [HttpDelete]
+        public Task<ServiceResponse<bool>> Delete(DeleteProductCommand input)
+        {
+            return _mediator.Send(input);
+        }
     }
 }
