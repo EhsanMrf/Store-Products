@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Product\Command\" />
     <Folder Include="User\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StoreProducts.Core\StoreProducts.Core.csproj" />
   </ItemGroup>
 
 </Project>
