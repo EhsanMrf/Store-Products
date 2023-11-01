@@ -10,3 +10,5 @@ E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.dll
 E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\refint\Common.dll
 E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.pdb
 E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\ref\Common.dll
+E:\StoreProducts\StoreProducts\Common\bin\Debug\net7.0\Common.runtimeconfig.json
+E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.genruntimeconfig.cache

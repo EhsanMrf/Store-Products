@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1M3IvweSMcGi5ovEextsFX5z71E68qNxumGyERdNlaocVvqAkABZQg0r7q7fm31mBY//Y6rbA0lmfMyOWoSO/Q==",
+  "dgSpecHash": "Oo38wJYrBiU7odxcHc+m90esAsH8rCQLsr8ImMQLU8XnCaOKXRGb5wE4nmVr5B8tAsa0gdrPDC3+UXiJ7r4JpQ==",
   "success": true,
   "projectFilePath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.WebApi\\StoreProducts.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tpers\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -15,7 +16,7 @@
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.13\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.13.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",

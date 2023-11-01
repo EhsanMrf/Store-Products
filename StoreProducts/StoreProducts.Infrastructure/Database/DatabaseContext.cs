@@ -9,6 +9,10 @@ namespace StoreProducts.Infrastructure.Database;
 
 public class DatabaseContext : IdentityDbContext<User,IdentityRole<int>,int>
 {
+    public DatabaseContext(DbContextOptions<DatabaseContext> options):base(options)
+    {
+        
+    }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.RegisterAllEntities<BaseEntity<int>>();

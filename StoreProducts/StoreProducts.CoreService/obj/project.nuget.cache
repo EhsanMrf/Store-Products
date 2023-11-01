@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "86Ohe+rjJuRY7sGNfXqcVnEBtnE8FvLjeXguC6ZEUKZ1t6DsTK7xeO7kvpt49dnM0eZUAcOPdXVU9nimnBjEmw==",
+  "dgSpecHash": "7VhxTqECw3aARPbg38wK/i9bWI8Q9LE7fPqL577PHu+4IWuuntyZ1h2X0dI6nBwIml2nNsVeaigBkfGLtaVpZg==",
   "success": true,
   "projectFilePath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.CoreService\\StoreProducts.CoreService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tpers\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
@@ -12,7 +13,7 @@
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.13\\microsoft.aspnetcore.cryptography.keyderivation.7.0.13.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.13\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.13.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
