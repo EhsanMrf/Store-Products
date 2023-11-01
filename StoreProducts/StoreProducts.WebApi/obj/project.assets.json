@@ -298,6 +298,23 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "5.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -1247,6 +1264,48 @@
         "runtime": {
           "bin/placeholder/Common.dll": {}
         }
+      },
+      "StoreProducts.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreProducts.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreProducts.Core.dll": {}
+        }
+      },
+      "StoreProducts.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Common": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "StoreProducts.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreProducts.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreProducts.Infrastructure.dll": {}
+        }
+      },
+      "StoreProducts.Infrastructure.Date/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "StoreProducts.Core": "1.0.0",
+          "StoreProducts.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreProducts.Infrastructure.Date.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreProducts.Infrastructure.Date.dll": {}
+        }
       }
     }
   },
@@ -1628,6 +1687,20 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
         "microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
+      "sha512": "86lPGt6HpkUgL+FHnu1nPmBmwvuBRqtYZPgj+sIhsF2OqRWOeQiXUjy3pspNgl1CK5goK5icjBAIlrl3LkMFuw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
+        "microsoft.entityframeworkcore.sqlserver.7.0.13.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
@@ -3470,6 +3543,21 @@
       "type": "project",
       "path": "../Common/Common.csproj",
       "msbuildProject": "../Common/Common.csproj"
+    },
+    "StoreProducts.Core/1.0.0": {
+      "type": "project",
+      "path": "../StoreProducts.Core/StoreProducts.Core.csproj",
+      "msbuildProject": "../StoreProducts.Core/StoreProducts.Core.csproj"
+    },
+    "StoreProducts.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../StoreProducts.Infrastructure/StoreProducts.Infrastructure.csproj",
+      "msbuildProject": "../StoreProducts.Infrastructure/StoreProducts.Infrastructure.csproj"
+    },
+    "StoreProducts.Infrastructure.Date/1.0.0": {
+      "type": "project",
+      "path": "../StoreProducts.Infrastructure.Date/StoreProducts.Infrastructure.Date.csproj",
+      "msbuildProject": "../StoreProducts.Infrastructure.Date/StoreProducts.Infrastructure.Date.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3477,6 +3565,7 @@
       "Common >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.4",
       "Scrutor >= 4.2.2",
+      "StoreProducts.Infrastructure.Date >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -3509,6 +3598,9 @@
           "projectReferences": {
             "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj": {
               "projectPath": "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj"
+            },
+            "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj": {
+              "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj"
             }
           }
         }

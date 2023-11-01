@@ -81,6 +81,195 @@
         }
       }
     },
+    "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj",
+        "projectName": "StoreProducts.Core",
+        "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj",
+        "packagesPath": "C:\\Users\\Tpers\\.nuget\\packages\\",
+        "outputPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tpers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/apsymodels/_packaging/Common/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj": {
+                "projectPath": "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj",
+        "projectName": "StoreProducts.Infrastructure.Date",
+        "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj",
+        "packagesPath": "C:\\Users\\Tpers\\.nuget\\packages\\",
+        "outputPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tpers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/apsymodels/_packaging/Common/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj": {
+                "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj"
+              },
+              "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj": {
+                "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj",
+        "projectName": "StoreProducts.Infrastructure",
+        "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Tpers\\.nuget\\packages\\",
+        "outputPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tpers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/apsymodels/_packaging/Common/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj": {
+                "projectPath": "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj"
+              },
+              "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj": {
+                "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\StoreProducts\\StoreProducts\\StoreProducts.WebApi\\StoreProducts.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -107,6 +296,9 @@
             "projectReferences": {
               "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj": {
                 "projectPath": "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj"
+              },
+              "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj": {
+                "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure.Date\\StoreProducts.Infrastructure.Date.csproj"
               }
             }
           }
