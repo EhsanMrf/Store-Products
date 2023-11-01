@@ -22,6 +22,6 @@ public class ServiceResponse<T> : ServiceResponse
                 Message = "Ops!"
             };
         }
-        return new ServiceResponse<T>{Data = data};
+        return new ServiceResponse<T>{Data = data, StatusCode = (int)HttpStatusCode.OK };
     }
 }
