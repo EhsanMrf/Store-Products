@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Product\Command\" />
     <Folder Include="User\" />
-    <Folder Include="Product\" />
   </ItemGroup>
 
 </Project>
