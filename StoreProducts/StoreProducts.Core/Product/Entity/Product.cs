@@ -1,5 +1,8 @@
-﻿namespace StoreProducts.Core.Product.Entity;
+﻿using Common.Entity;
 
-public class Product
+namespace StoreProducts.Core.Product.Entity;
+
+public class Product :BaseEntity<int>
 {
+
 }
