@@ -32,7 +32,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         return entity;
     }
 
-    public async Task<ServiceResponse<T>> UpdateByIdMapper(TId id, object inputEntity)
+    public async Task<ServiceResponse<T>> UpdateByIdObject(TId id, object inputEntity)
     {
         var oldEntity = await GetById(id);
         Utils.NotNull(oldEntity);
