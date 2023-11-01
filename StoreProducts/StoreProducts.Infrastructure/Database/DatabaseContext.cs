@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Common.Database;
+using Common.Entity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StoreProducts.Core.User.Entity;
@@ -9,7 +11,8 @@ public class DatabaseContext : IdentityDbContext<User,IdentityRole<int>,int>
 {
     protected override void OnModelCreating(ModelBuilder builder)
     {
-
+        builder.RegisterAllEntities<BaseEntity<int>>();
+        builder.SoftDeleteGlobalFilter();
 
         builder.Entity<IdentityUserLogin<int>>().HasKey(p => new { p.ProviderKey, p.LoginProvider });
         builder.Entity<IdentityUserRole<int>>().HasKey(p => new { p.UserId, p.RoleId });
