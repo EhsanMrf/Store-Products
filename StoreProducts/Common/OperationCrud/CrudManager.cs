@@ -40,9 +40,20 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         serviceEntity.Data = entity;
         return serviceEntity;
     }
+
+    public async Task<ServiceResponse<bool>> DeleteById(TDatabase dbContext,TId id)
+    {
+        var entity = await dbContext.Set<T>().Where(q => q.Id.Equals(id)).FirstOrDefaultAsync();
+        Utils.NotNull(entity);
+        entity.IsDeleted=true;
+        dbContext.Entry(entity).State = EntityState.Modified;
+        return await dbContext.SaveChangesAsync() > 0;
+    }
+
     public async Task<ServiceResponse<T>> GetById(TDatabase dbContext, ServiceResponse<T> serviceEntity, TId id)
     {
         var data = await dbContext.Set<T>().Where(q => q.Id.Equals(id)).FirstOrDefaultAsync();
+        Utils.NotNull(data);
         serviceEntity.Data = data;
         return serviceEntity.Data is not null ? serviceEntity : new ServiceResponse<T> { Data = null, Message = "No Data" };
     }
@@ -53,5 +64,6 @@ public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId>
     Task<bool> Insert(TDatabase dbContext, T entity);
     Task<ServiceResponse<T>> Insert(TDatabase dbContext, ServiceResponse<T> serviceEntity);
     Task<ServiceResponse<T>> UpdateById(TDatabase dbContext, ServiceResponse<T> serviceEntity, TId id, T inputEntity);
+    Task<ServiceResponse<bool>> DeleteById(TDatabase dbContext, TId id);
     Task<ServiceResponse<T>> GetById(TDatabase dbContext, ServiceResponse<T> serviceEntity, TId id);
 }
