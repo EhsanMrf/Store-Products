@@ -1,0 +1,5 @@
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.csproj.AssemblyReference.cache
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.AssemblyInfoInputs.cache
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.AssemblyInfo.cs
+E:\StoreProducts\StoreProducts\StoreProducts.Infrastructure\obj\Debug\net7.0\StoreProducts.Infrastructure.csproj.CoreCompileInputs.cache

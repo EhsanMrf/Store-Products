@@ -3,3 +3,10 @@ E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.GeneratedMSBuildEd
 E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.AssemblyInfoInputs.cache
 E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.AssemblyInfo.cs
 E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.csproj.CoreCompileInputs.cache
+E:\StoreProducts\StoreProducts\Common\bin\Debug\net7.0\Common.deps.json
+E:\StoreProducts\StoreProducts\Common\bin\Debug\net7.0\Common.dll
+E:\StoreProducts\StoreProducts\Common\bin\Debug\net7.0\Common.pdb
+E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.dll
+E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\refint\Common.dll
+E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\Common.pdb
+E:\StoreProducts\StoreProducts\Common\obj\Debug\net7.0\ref\Common.dll
