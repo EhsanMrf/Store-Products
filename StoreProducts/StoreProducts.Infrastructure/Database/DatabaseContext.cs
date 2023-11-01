@@ -16,7 +16,8 @@ public class DatabaseContext : IdentityDbContext<User,IdentityRole<int>,int>
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.SoftDeleteGlobalFilter();
+        //builder.SoftDeleteGlobalFilter();
+        builder.Entity<Core.Product.Entity.Product>().HasQueryFilter(p => !p.IsDeleted);
 
         builder.Entity<Core.Product.Entity.Product>().ToTable("Products");
 
