@@ -1,4 +1,6 @@
-﻿namespace Common.Response;
+﻿using System.Net;
+
+namespace Common.Response;
 
 public class ServiceResponse
 {
@@ -7,6 +9,19 @@ public class ServiceResponse
 }
 public class ServiceResponse<T> : ServiceResponse
 {
-    public T Data { get; set; }
-    public static implicit operator ServiceResponse<T>(T data) => new();
+    public T? Data { get; set; }
+
+    public static implicit operator ServiceResponse<T>(T data)
+    {
+        if (data is null)
+        {
+            return new ServiceResponse<T>
+            {
+                Data = default,
+                StatusCode = (int)HttpStatusCode.BadRequest,
+                Message = "Ops!"
+            };
+        }
+        return new ServiceResponse<T>{Data = data};
+    }
 }

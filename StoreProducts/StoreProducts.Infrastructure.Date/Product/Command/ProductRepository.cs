@@ -25,6 +25,7 @@ public class ProductRepository : IProductRepository
             .WithManufacturePhone(command.ManufacturePhone)
             .WithProduceDate(command.ProduceDate).Build();
 
-       return await _repositoryManager.Insert<Core.Product.Entity.Product>(product);
+        var serviceResponse = await _repositoryManager.Insert<Core.Product.Entity.Product>(product);
+        return serviceResponse;
     }
 }
