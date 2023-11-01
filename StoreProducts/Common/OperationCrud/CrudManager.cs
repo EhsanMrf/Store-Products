@@ -37,8 +37,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         dbContext.Entry(entity).State = EntityState.Modified;
         var save = await dbContext.SaveChangesAsync()>0;
         Utils.StateOperation(save);
-        serviceEntity.Data = entity;
-        return serviceEntity;
+        return serviceEntity.Data;
     }
 
     public async Task<ServiceResponse<bool>> DeleteById(TDatabase dbContext,TId id)
