@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FA6ujtrKQpLPCDzzc3CHEPuenq05lraiutQokm/0C3oc78VEz6HVY+iwi+4452P8lc9LKdVCata3z6R5Stb7Wg==",
+  "dgSpecHash": "gJ1/nJyBq6diGyM/oNxNTUEtNFdV1Bqbn636wj31hehY/9ZqVXO/amqXJaSR+XnNggFghXFQNs5OYx/yEjl/YA==",
   "success": true,
   "projectFilePath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Tpers\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Tpers\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
@@ -66,5 +66,16 @@
     "C:\\Users\\Tpers\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Tpers\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Common depends on AutoMapper (>= 11.1.0) but AutoMapper 11.1.0 was not found. An approximate best match of AutoMapper 12.0.0 was resolved.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
