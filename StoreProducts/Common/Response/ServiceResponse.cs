@@ -8,4 +8,5 @@ public class ServiceResponse
 public class ServiceResponse<T> : ServiceResponse
 {
     public T Data { get; set; }
+    public static implicit operator ServiceResponse<T>(T data) => new();
 }
