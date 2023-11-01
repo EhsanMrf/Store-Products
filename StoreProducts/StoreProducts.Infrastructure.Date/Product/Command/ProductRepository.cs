@@ -30,7 +30,7 @@ public class ProductRepository : BaseService,IProductRepository
     public async Task<ServiceResponse<bool>> Update(UpdateProductCommand command)
     {
         if (await HasRecordBeforeUpdateByName(command))
-            Invalid(false, message: "You are not allowed to edit a duplicate name");
+            return Invalid(false, message: "You are not allowed to edit a duplicate name");
 
         return await _repositoryManager.UpdateById(command.Id, command);
     }
@@ -41,7 +41,12 @@ public class ProductRepository : BaseService,IProductRepository
     }
 
     private async Task<bool> HasRecordByName(string name)=> await _repositoryManager.HasRecord(q => q.Name.Equals(name));
-    private async Task<bool> HasRecordBeforeUpdateByName(UpdateProductCommand command) => await _repositoryManager.HasRecord(q=>q.Id!=command.Id && q.Name.Equals(command.Name));
+
+    private async Task<bool> HasRecordBeforeUpdateByName(UpdateProductCommand command)
+    {
+        var hasRecord = await _repositoryManager.SelectByPredicate(q=>q.Name.Equals(command.Name),i=>i.Id);
+        return hasRecord > 0 && hasRecord != command.Id;
+    }
 
     private Core.Product.Entity.Product InstanceProduct(CreateProductCommand command)
     {

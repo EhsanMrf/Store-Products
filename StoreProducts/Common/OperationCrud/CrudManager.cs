@@ -18,14 +18,14 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         this.dbContext = dbContext;
     }
 
-    public async Task<bool> Insert( T entity)
+    public async Task<bool> Insert(T entity)
     {
         Utils.NotNull(entity);
         dbContext.Entry(entity).State = EntityState.Added;
         return await dbContext.SaveChangesAsync() > 0;
     }
     public async Task<ServiceResponse<T>> Insert<T>(T entity)
-    { 
+    {
         Utils.NotNullEntity(entity);
         dbContext.Entry(entity).State = EntityState.Added;
         await dbContext.SaveChangesAsync();
@@ -38,7 +38,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         Utils.NotNull(oldEntity);
         var entity = _mapper.Map(inputEntity, oldEntity.Data);
         dbContext.Entry(entity).State = EntityState.Modified;
-        var save = await dbContext.SaveChangesAsync()>0;
+        var save = await dbContext.SaveChangesAsync() > 0;
         Utils.StateOperation(save);
         return entity;
     }
@@ -58,7 +58,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
     {
         var entity = await dbContext.Set<T>().Where(q => q.Id.Equals(id)).FirstOrDefaultAsync();
         Utils.NotNull(entity);
-        entity.IsDeleted=true;
+        entity.IsDeleted = true;
         dbContext.Entry(entity).State = EntityState.Modified;
         return await dbContext.SaveChangesAsync() > 0;
     }
@@ -68,21 +68,27 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         var data = await dbContext.Set<T>().Where(q => q.Id.Equals(id)).FirstOrDefaultAsync();
         Utils.NotNull(data);
         return data;
-    } 
-    
-    public async Task<bool> HasRecord(Expression<Func<T,bool>> predicate)
+    }
+
+    public async Task<bool> HasRecord(Expression<Func<T, bool>> predicate)
     {
         return await dbContext.Set<T>().AsNoTracking().AnyAsync(predicate);
     }
+
+    public async Task<TResult?> SelectByPredicate<TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> predicateSelect)
+    {
+        return await dbContext.Set<T>().Where(predicate).Select(predicateSelect).FirstOrDefaultAsync();
+    }
 }
 
-public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId> where TId : struct , IComparable where TDatabase : DbContext
+public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId> where TId : struct, IComparable where TDatabase : DbContext
 {
     Task<bool> Insert(T entity);
     Task<ServiceResponse<T>> Insert<T>(T serviceEntity);
     Task<ServiceResponse<T>> UpdateByIdObject(TId id, object inputEntity);
     Task<bool> UpdateById(TId id, object inputEntity);
-    Task<ServiceResponse<bool>> DeleteById( TId id);
+    Task<ServiceResponse<bool>> DeleteById(TId id);
     Task<ServiceResponse<T>> GetById(TId id);
     Task<bool> HasRecord(Expression<Func<T, bool>> predicate);
+    Task<TResult?> SelectByPredicate<TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> predicateSelect);
 }
