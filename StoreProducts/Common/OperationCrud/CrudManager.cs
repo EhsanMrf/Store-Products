@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
 using Common.Entity;
 using Common.Response;
 using Microsoft.EntityFrameworkCore;
@@ -68,6 +69,11 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         var data = await dbContext.Set<T>().Where(q => q.Id.Equals(id)).FirstOrDefaultAsync();
         Utils.NotNull(data);
         return data;
+    } 
+    
+    public async Task<ServiceResponse<bool>> HasRecord(Expression<Func<T,bool>> predicate)
+    {
+        return await dbContext.Set<T>().AsNoTracking().AnyAsync(predicate);
     }
 }
 
@@ -79,4 +85,5 @@ public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId>
     Task<bool> UpdateById(TId id, object inputEntity);
     Task<ServiceResponse<bool>> DeleteById( TId id);
     Task<ServiceResponse<T>> GetById(TId id);
+    Task<ServiceResponse<bool>> HasRecord(Expression<Func<T, bool>> predicate);
 }
