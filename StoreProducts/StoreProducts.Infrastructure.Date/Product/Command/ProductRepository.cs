@@ -31,7 +31,6 @@ public class ProductRepository : IProductRepository
 
     public async Task<ServiceResponse<bool>> Update(UpdateProductCommand command)
     {
-        await _repositoryManager.UpdateById(command.Id, command);
-        throw new NotImplementedException();
+        return await _repositoryManager.UpdateById(command.Id, command);
     }
 }

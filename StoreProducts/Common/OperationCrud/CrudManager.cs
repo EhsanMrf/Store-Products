@@ -32,7 +32,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         return entity;
     }
 
-    public async Task<ServiceResponse<T>> UpdateById(TId id, object inputEntity)
+    public async Task<ServiceResponse<T>> UpdateByIdMapper(TId id, object inputEntity)
     {
         var oldEntity = await GetById(id);
         Utils.NotNull(oldEntity);
@@ -41,6 +41,17 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         var save = await dbContext.SaveChangesAsync()>0;
         Utils.StateOperation(save);
         return entity;
+    }
+
+    public async Task<bool> UpdateById(TId id, object inputEntity)
+    {
+        var oldEntity = await GetById(id);
+        Utils.NotNull(oldEntity);
+        var entity = _mapper.Map(inputEntity, oldEntity.Data);
+        dbContext.Entry(entity).State = EntityState.Modified;
+        var save = await dbContext.SaveChangesAsync() > 0;
+        Utils.StateOperation(save);
+        return save;
     }
 
     public async Task<ServiceResponse<bool>> DeleteById(TId id)
@@ -64,7 +75,8 @@ public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId>
 {
     Task<bool> Insert(T entity);
     Task<ServiceResponse<T>> Insert<T>(T serviceEntity);
-    Task<ServiceResponse<T>> UpdateById(TId id, object inputEntity);
+    Task<ServiceResponse<T>> UpdateByIdObject(TId id, object inputEntity);
+    Task<bool> UpdateById(TId id, object inputEntity);
     Task<ServiceResponse<bool>> DeleteById( TId id);
     Task<ServiceResponse<T>> GetById(TId id);
 }
