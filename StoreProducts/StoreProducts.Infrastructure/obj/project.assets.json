@@ -1105,6 +1105,19 @@
         "runtime": {
           "bin/placeholder/Common.dll": {}
         }
+      },
+      "StoreProducts.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreProducts.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreProducts.Core.dll": {}
+        }
       }
     }
   },
@@ -2896,12 +2909,18 @@
       "type": "project",
       "path": "../Common/Common.csproj",
       "msbuildProject": "../Common/Common.csproj"
+    },
+    "StoreProducts.Core/1.0.0": {
+      "type": "project",
+      "path": "../StoreProducts.Core/StoreProducts.Core.csproj",
+      "msbuildProject": "../StoreProducts.Core/StoreProducts.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Common >= 1.0.0",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
+      "StoreProducts.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2933,6 +2952,9 @@
           "projectReferences": {
             "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj": {
               "projectPath": "E:\\StoreProducts\\StoreProducts\\Common\\Common.csproj"
+            },
+            "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj": {
+              "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj"
             }
           }
         }
