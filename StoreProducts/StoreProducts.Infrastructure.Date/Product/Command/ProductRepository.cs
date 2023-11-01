@@ -33,4 +33,9 @@ public class ProductRepository : IProductRepository
     {
         return await _repositoryManager.UpdateById(command.Id, command);
     }
+
+    public async Task<ServiceResponse<bool>> Delete(DeleteProductCommand command)
+    {
+        return await _repositoryManager.DeleteById(command.Id);
+    }
 }
