@@ -6,7 +6,10 @@ using StoreProducts.Core.Product.RepositoryCommand;
 
 namespace StoreProducts.CoreService.Product.CommandHandler;
 
-public class ProductCommandHandler:IRequestHandler<CreateProductCommand,ServiceResponse<Core.Product.Entity.Product>>
+public class ProductCommandHandler
+    :IRequestHandler<CreateProductCommand,ServiceResponse<Core.Product.Entity.Product>>,
+    IRequestHandler<UpdateProductCommand,ServiceResponse<bool>>
+
 {
     private readonly IProductRepository _repository;
 
@@ -18,5 +21,10 @@ public class ProductCommandHandler:IRequestHandler<CreateProductCommand,ServiceR
     public async Task<ServiceResponse<Core.Product.Entity.Product>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
         return await _repository.Create(request);
+    }
+
+    public async Task<ServiceResponse<bool>> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+    {
+        return await _repository.Update(request);
     }
 }
