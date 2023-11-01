@@ -3,7 +3,6 @@ using AutoMapper;
 using Common.Entity;
 using Common.Response;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Principal;
 using Common.Util;
 
 namespace Common.OperationCrud;
@@ -71,7 +70,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         return data;
     } 
     
-    public async Task<ServiceResponse<bool>> HasRecord(Expression<Func<T,bool>> predicate)
+    public async Task<bool> HasRecord(Expression<Func<T,bool>> predicate)
     {
         return await dbContext.Set<T>().AsNoTracking().AnyAsync(predicate);
     }
@@ -85,5 +84,5 @@ public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId>
     Task<bool> UpdateById(TId id, object inputEntity);
     Task<ServiceResponse<bool>> DeleteById( TId id);
     Task<ServiceResponse<T>> GetById(TId id);
-    Task<ServiceResponse<bool>> HasRecord(Expression<Func<T, bool>> predicate);
+    Task<bool> HasRecord(Expression<Func<T, bool>> predicate);
 }
