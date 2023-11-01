@@ -1,6 +1,8 @@
-﻿using Common.TransientService;
+﻿using Common.OperationCrud;
+using Common.TransientService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using StoreProducts.Core.Product.Entity;
 using StoreProducts.Core.User.Entity;
 using StoreProducts.Infrastructure.Database;
 using StoreProducts.Infrastructure.Date.Product.Command;
@@ -21,8 +23,16 @@ public static class ServiceProviderServiceExtensions
             .AddClasses(classes => classes.AssignableTo<ITransientServiceInfrastructure>())
             .AsImplementedInterfaces()
             .WithScopedLifetime());
-    }  
+
+    }
     
+    public static void SingletonCrudManager(this IServiceCollection services)
+    {
+        services.Add(new ServiceDescriptor(typeof(ICrudManager<Product, int, DatabaseContext>), 
+            typeof(CrudManager<Product, int, DatabaseContext>), ServiceLifetime.Scoped));
+
+    }
+
     public static void InternalizeDataBase(this IServiceCollection services)
     {
         services

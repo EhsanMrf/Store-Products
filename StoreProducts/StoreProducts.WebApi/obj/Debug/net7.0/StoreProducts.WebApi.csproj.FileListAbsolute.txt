@@ -95,3 +95,4 @@ E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\refint\Stor
 E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.pdb
 E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.genruntimeconfig.cache
 E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\ref\StoreProducts.WebApi.dll
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

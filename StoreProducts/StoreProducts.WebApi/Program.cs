@@ -1,5 +1,6 @@
 using MediatR;
 using StoreProducts.CoreService.Product.CommandHandler;
+using StoreProducts.Infrastructure.Mapper;
 using StoreProducts.WebApi.ProviderExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.DatabaseContext(builder.Configuration.GetSection("Connection").Value);
 builder.Services.InternalizeDataBase();
 builder.Services.InjectScope();
+builder.Services.SingletonCrudManager();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 builder.Services.AddMediatR(typeof(ProductCommandHandler));
 
