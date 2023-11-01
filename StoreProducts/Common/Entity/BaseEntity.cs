@@ -1,8 +1,10 @@
-﻿namespace Common.Entity;
+﻿using System.Security.Cryptography;
 
-public class BaseEntity<T> : EntityDef
+namespace Common.Entity;
+
+public class BaseEntity<TId> where TId : struct, IComparable
 {
-    public T Id { get; set; }
+    public TId Id { get; set; }
     public DateTime CreateDateTime { get; set; }
     public DateTime? UpdateDateTime { get; set; }
     public bool IsDeleted { get; set; }
