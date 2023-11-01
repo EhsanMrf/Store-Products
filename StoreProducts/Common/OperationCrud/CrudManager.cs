@@ -24,10 +24,10 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         dbContext.Entry(entity).State = EntityState.Added;
         return await dbContext.SaveChangesAsync() > 0;
     }
-    public async Task<ServiceResponse<T>> Insert( ServiceResponse<T> entity)
+    public async Task<ServiceResponse<T>> Insert<T>(T entity)
     { 
-        Utils.NotNull(entity.Data);
-        dbContext.Entry(entity.Data).State = EntityState.Added;
+        Utils.NotNullEntity(entity);
+        dbContext.Entry(entity).State = EntityState.Added;
         await dbContext.SaveChangesAsync();
         return entity;
     }
@@ -64,7 +64,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
 public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId> where TId : struct , IComparable where TDatabase : DbContext
 {
     Task<bool> Insert(T entity);
-    Task<ServiceResponse<T>> Insert( ServiceResponse<T> serviceEntity);
+    Task<ServiceResponse<T>> Insert<T>(T serviceEntity);
     Task<ServiceResponse<T>> UpdateById( ServiceResponse<T> serviceEntity, TId id, T inputEntity);
     Task<ServiceResponse<bool>> DeleteById( TId id);
     Task<ServiceResponse<T>> GetById( ServiceResponse<T> serviceEntity, TId id);

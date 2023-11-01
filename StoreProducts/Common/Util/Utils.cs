@@ -7,6 +7,12 @@ public class Utils
         if (obj is null)
             throw new ArgumentNullException($"{nameof(obj)} {message}");
     } 
+    
+    public static void NotNullEntity<T>(T obj, string message = "Data Is Nul")
+    {
+        if (obj is null)
+            throw new ArgumentNullException($"{nameof(obj)} {message}");
+    } 
     public static void StateOperation(bool isSave, string message = "Operation Failed")
     {
         if (!isSave)
