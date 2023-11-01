@@ -1,6 +1,8 @@
-﻿namespace StoreProducts.Infrastructure.Product.Builder;
+﻿using Common.TransientService;
 
-public interface IProductBuilder
+namespace StoreProducts.Infrastructure.Product.Builder;
+
+public interface IProductBuilder : ITransientServiceInfrastructure
 {
     IProductBuilder WithName(string name);
     IProductBuilder WithManufacturePhone(string manufacturePhone);
