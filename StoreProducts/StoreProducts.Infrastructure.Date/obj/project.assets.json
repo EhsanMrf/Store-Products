@@ -279,6 +279,23 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "5.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -1101,6 +1118,21 @@
         "runtime": {
           "bin/placeholder/StoreProducts.Core.dll": {}
         }
+      },
+      "StoreProducts.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Common": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "StoreProducts.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoreProducts.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreProducts.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -1467,6 +1499,20 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
         "microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
+      "sha512": "86lPGt6HpkUgL+FHnu1nPmBmwvuBRqtYZPgj+sIhsF2OqRWOeQiXUjy3pspNgl1CK5goK5icjBAIlrl3LkMFuw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
+        "microsoft.entityframeworkcore.sqlserver.7.0.13.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -2883,11 +2929,17 @@
       "type": "project",
       "path": "../StoreProducts.Core/StoreProducts.Core.csproj",
       "msbuildProject": "../StoreProducts.Core/StoreProducts.Core.csproj"
+    },
+    "StoreProducts.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../StoreProducts.Infrastructure/StoreProducts.Infrastructure.csproj",
+      "msbuildProject": "../StoreProducts.Infrastructure/StoreProducts.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "StoreProducts.Core >= 1.0.0"
+      "StoreProducts.Core >= 1.0.0",
+      "StoreProducts.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2919,6 +2971,9 @@
           "projectReferences": {
             "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj": {
               "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Core\\StoreProducts.Core.csproj"
+            },
+            "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj": {
+              "projectPath": "E:\\StoreProducts\\StoreProducts\\StoreProducts.Infrastructure\\StoreProducts.Infrastructure.csproj"
             }
           }
         }
