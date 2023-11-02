@@ -18,19 +18,19 @@ namespace StoreProducts.WebApi.Controllers
         }
 
         [HttpPost]
-        public Task<ServiceResponse<Product>> Create(CreateProductCommand input)
+        public Task<ServiceResponse<Product>> Create([FromQuery]CreateProductCommand input)
         {
             return _mediator.Send(input);
         } 
         
         [HttpPut]
-        public Task<ServiceResponse<bool>> Update(UpdateProductCommand input)
+        public Task<ServiceResponse<bool>> Update([FromQuery] UpdateProductCommand input)
         {
             return _mediator.Send(input);
         }
         
         [HttpDelete]
-        public Task<ServiceResponse<bool>> Delete(DeleteProductCommand input)
+        public Task<ServiceResponse<bool>> Delete([FromQuery] DeleteProductCommand input)
         {
             return _mediator.Send(input);
         }
