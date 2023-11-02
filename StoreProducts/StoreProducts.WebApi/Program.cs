@@ -2,7 +2,7 @@ using FluentValidation;
 using MediatR;
 using StoreProducts.CoreService.Product.CommandHandler;
 using StoreProducts.Infrastructure.Mapper;
-using StoreProducts.Infrastructure.Validation.Product;
+using StoreProducts.Infrastructure.Validation.Product.Create;
 using StoreProducts.WebApi.ProviderExtensions;
 
 var builder = WebApplication.CreateBuilder(args);

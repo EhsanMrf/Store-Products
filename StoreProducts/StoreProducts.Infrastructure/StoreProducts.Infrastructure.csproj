@@ -16,4 +16,9 @@
     <ProjectReference Include="..\StoreProducts.Core\StoreProducts.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validation\Product\Delete\" />
+    <Folder Include="Validation\Product\Update\" />
+  </ItemGroup>
+
 </Project>
