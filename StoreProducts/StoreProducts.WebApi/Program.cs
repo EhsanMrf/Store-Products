@@ -1,7 +1,5 @@
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 using StoreProducts.CoreService.Product.CommandHandler;
 using StoreProducts.Infrastructure.Mapper;
 using StoreProducts.Infrastructure.Validation;
