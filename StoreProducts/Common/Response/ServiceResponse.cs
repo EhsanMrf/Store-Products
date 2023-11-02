@@ -6,6 +6,7 @@ public class ServiceResponse
 {
     public int StatusCode { get; set; }
     public string Message { get; set; }
+    public List<ServiceSubStatus> ServiceSubStatus { get; set; }
 }
 public class ServiceResponse<T> : ServiceResponse
 {
@@ -22,6 +23,11 @@ public class ServiceResponse<T> : ServiceResponse
                 Message = "Ops!"
             };
         }
-        return new ServiceResponse<T>{Data = data, StatusCode = (int)HttpStatusCode.OK };
+        return new ServiceResponse<T>
+        {
+            Data = data,
+            StatusCode = (int)HttpStatusCode.OK,
+            
+        };
     }
 }
