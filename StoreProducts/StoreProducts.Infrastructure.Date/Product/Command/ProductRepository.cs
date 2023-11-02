@@ -4,6 +4,7 @@ using Common.Response;
 using StoreProducts.Core.Product.Command;
 using StoreProducts.Core.Product.RepositoryCommand;
 using StoreProducts.Infrastructure.Database;
+using StoreProducts.Infrastructure.PacketMessage;
 using StoreProducts.Infrastructure.Product.Builder;
 
 namespace StoreProducts.Infrastructure.Date.Product.Command;
@@ -12,16 +13,18 @@ public class ProductRepository : BaseService,IProductRepository
 {
     private readonly ICrudManager<Core.Product.Entity.Product,int,DatabaseContext> _repositoryManager;
     private readonly IProductBuilder _productBuilder;
-    public ProductRepository(ICrudManager<Core.Product.Entity.Product, int, DatabaseContext> repositoryManager, IProductBuilder productBuilder)
+    private readonly IPackageMessage _packageMessage;
+    public ProductRepository(ICrudManager<Core.Product.Entity.Product, int, DatabaseContext> repositoryManager, IProductBuilder productBuilder, IPackageMessage packageMessage)
     {
         _repositoryManager = repositoryManager;
         _productBuilder = productBuilder;
+        _packageMessage = packageMessage;
     }
 
     public async Task<ServiceResponse<Core.Product.Entity.Product>> Create(CreateProductCommand command)
     {
         if (await HasRecordByName(command.Name))
-            Invalid(false, message: "You are not allowed to register twice");
+            Invalid(false, message: _packageMessage.InvalidCreateProduct());
 
         var serviceResponse = await _repositoryManager.Insert<Core.Product.Entity.Product>(InstanceProduct(command));
         return serviceResponse;
@@ -30,7 +33,7 @@ public class ProductRepository : BaseService,IProductRepository
     public async Task<ServiceResponse<bool>> Update(UpdateProductCommand command)
     {
         if (await HasRecordBeforeUpdateByName(command))
-            return Invalid(false, message: "You are not allowed to edit a duplicate name");
+            return Invalid(false, message: _packageMessage.InvalidUpdateProduct());
 
         return await _repositoryManager.UpdateById(command.Id, command);
     }
