@@ -2,7 +2,7 @@ using FluentValidation;
 using MediatR;
 using StoreProducts.CoreService.Product.CommandHandler;
 using StoreProducts.Infrastructure.Mapper;
-using StoreProducts.Infrastructure.Validation;
+using StoreProducts.Infrastructure.Validation.Product;
 using StoreProducts.WebApi.ProviderExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +22,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddMediatR(typeof(ProductCommandHandler));
 
 builder.Services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>();
+builder.Services.BeforeRequestInPipeLine();
 
 var app = builder.Build();
 

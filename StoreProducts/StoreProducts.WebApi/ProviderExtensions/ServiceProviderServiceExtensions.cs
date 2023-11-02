@@ -1,11 +1,13 @@
 ﻿using Common.OperationCrud;
 using Common.TransientService;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StoreProducts.Core.Product.Entity;
 using StoreProducts.Core.User.Entity;
 using StoreProducts.Infrastructure.Database;
 using StoreProducts.Infrastructure.Date.Product.Command;
+using StoreProducts.Infrastructure.PipelineBehavior;
 using StoreProducts.Infrastructure.Product.Builder;
 
 namespace StoreProducts.WebApi.ProviderExtensions;
@@ -44,5 +46,10 @@ public static class ServiceProviderServiceExtensions
     public static void DatabaseContext(this IServiceCollection services, string connection)
     {
         services.AddDbContext<DatabaseContext>(x => x.UseSqlServer(connection));
+    } 
+    
+    public static void BeforeRequestInPipeLine(this IServiceCollection services)
+    {
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     }
 }
