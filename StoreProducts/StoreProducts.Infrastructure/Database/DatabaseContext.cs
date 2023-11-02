@@ -1,14 +1,10 @@
-﻿using Common.Database;
-using Common.Entity;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using StoreProducts.Core.User.Entity;
-using System.Reflection.Emit;
 
 namespace StoreProducts.Infrastructure.Database;
 
-public class DatabaseContext : IdentityDbContext<User,IdentityRole<int>,int>
+public class DatabaseContext : IdentityDbContext<Core.User.Entity.User,IdentityRole<int>,int>
 {
     public DatabaseContext(DbContextOptions<DatabaseContext> options):base(options)
     {
