@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="User\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\StoreProducts.Core\StoreProducts.Core.csproj" />
     <ProjectReference Include="..\StoreProducts.Infrastructure\StoreProducts.Infrastructure.csproj" />
   </ItemGroup>
