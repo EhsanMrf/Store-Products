@@ -23,6 +23,7 @@
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\StoreProducts.CoreService\StoreProducts.CoreService.csproj" />
     <ProjectReference Include="..\StoreProducts.Infrastructure.Date\StoreProducts.Infrastructure.Date.csproj" />
+    <ProjectReference Include="..\StoreProducts.Infrastructure\StoreProducts.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
