@@ -96,3 +96,6 @@ E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProduc
 E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\StoreProducts.WebApi.genruntimeconfig.cache
 E:\StoreProducts\StoreProducts\StoreProducts.WebApi\obj\Debug\net7.0\ref\StoreProducts.WebApi.dll
 E:\StoreProducts\StoreProducts\StoreProducts.WebApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\bin\Debug\net7.0\FluentValidation.dll
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+E:\StoreProducts\StoreProducts\StoreProducts.WebApi\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll

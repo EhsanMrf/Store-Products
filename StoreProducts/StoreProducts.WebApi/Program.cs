@@ -1,6 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using StoreProducts.CoreService.Product.CommandHandler;
 using StoreProducts.Infrastructure.Mapper;
+using StoreProducts.Infrastructure.Validation;
 using StoreProducts.WebApi.ProviderExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,8 +21,9 @@ builder.Services.InternalizeDataBase();
 builder.Services.InjectScope();
 builder.Services.SingletonCrudManager();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
-
 builder.Services.AddMediatR(typeof(ProductCommandHandler));
+
+builder.Services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>();
 
 var app = builder.Build();
 
