@@ -1,9 +1,11 @@
-﻿using Common.OperationCrud;
+﻿using Common.Jwt;
+using Common.OperationCrud;
 using Common.TransientService;
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using StoreProducts.Core.Product.Entity;
 using StoreProducts.Core.User.Entity;
 using StoreProducts.Infrastructure.Database;
@@ -15,6 +17,44 @@ namespace StoreProducts.WebApi.ProviderExtensions;
 
 public static class ServiceProviderServiceExtensions
 {
+
+    public static void ConfigurationSwaggerGe(this IServiceCollection services, IConfiguration configuration)
+    {
+        var swaggerDoc = configuration.GetSection("SwaggerDoc").Get<SwaggerDoc>();
+        services.AddSwaggerGen(x =>
+        {
+            x.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Version = swaggerDoc.Version,
+                Title = swaggerDoc.Title,
+                Description = swaggerDoc.Description,
+                Contact = new OpenApiContact { Name = swaggerDoc.Content }
+            });
+            x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description = "JWt Authorization header using Bearer schema"
+            });
+            x.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },new string[]{}
+                }
+            });
+        });
+    }
+
     public static void InjectScope(this IServiceCollection services)
     {
         services.Scan(scan => scan.FromAssembliesOf(typeof(ProductRepository))
@@ -28,10 +68,10 @@ public static class ServiceProviderServiceExtensions
             .WithScopedLifetime());
 
     }
-    
+
     public static void SingletonCrudManager(this IServiceCollection services)
     {
-        services.Add(new ServiceDescriptor(typeof(ICrudManager<Product, int, DatabaseContext>), 
+        services.Add(new ServiceDescriptor(typeof(ICrudManager<Product, int, DatabaseContext>),
             typeof(CrudManager<Product, int, DatabaseContext>), ServiceLifetime.Scoped));
 
     }
@@ -43,12 +83,12 @@ public static class ServiceProviderServiceExtensions
             .AddEntityFrameworkStores<DatabaseContext>()
             .AddDefaultTokenProviders();
     }
-    
+
     public static void DatabaseContext(this IServiceCollection services, string connection)
     {
         services.AddDbContext<DatabaseContext>(x => x.UseSqlServer(connection));
-    } 
-    
+    }
+
     public static void BeforeRequestInPipeLine(this IServiceCollection services)
     {
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));

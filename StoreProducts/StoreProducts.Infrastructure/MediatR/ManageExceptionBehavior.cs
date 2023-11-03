@@ -4,7 +4,6 @@ using MediatR.Pipeline;
 
 namespace StoreProducts.Infrastructure.MediatR
 {
-    //ServiceSubStatus
     public class ManageExceptionBehavior<TRequest, TResponse, TException> : IRequestExceptionHandler<TRequest, TResponse, TException>
         where TException : Exception where TRequest : IRequest<TResponse> where TResponse : ServiceResponse, new()
     {
