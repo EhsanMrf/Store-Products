@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StoreProducts.Core.User.Command;
+using StoreProducts.Core.User.Query;
 
 namespace StoreProducts.WebApi.Controllers
 {
@@ -13,9 +14,11 @@ namespace StoreProducts.WebApi.Controllers
         public UserController(IMediator mediator) => _mediator = mediator;
 
         [HttpPost("RegisterUser")]
-        public Task<ServiceResponse<bool>> RegisterUser([FromQuery]UserRegisterCommand input)
-        {
-            return _mediator.Send(input);
-        }
+        public Task<ServiceResponse<bool>> RegisterUser([FromQuery] UserRegisterCommand input) => _mediator.Send(input);
+
+
+        [HttpGet]
+        public Task<ServiceResponse<bool>> Login([FromQuery] UserLoginQuery input) => _mediator.Send(input);
+
     }
 }

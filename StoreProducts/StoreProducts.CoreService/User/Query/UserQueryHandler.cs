@@ -1,11 +1,12 @@
-﻿using Common.Response;
+﻿using Common.BaseService;
+using Common.Response;
 using MediatR;
 using StoreProducts.Core.User.Query;
 using StoreProducts.Core.User.RepositoryQuery;
 
 namespace StoreProducts.CoreService.User.Query;
 
-public class UserQueryHandler :IRequestHandler<UserLoginQuery,ServiceResponse<bool>>
+public class UserQueryHandler :BaseService,IRequestHandler<UserLoginQuery,ServiceResponse<bool>>
 {
     private readonly IUserQueryRepository _userQueryRepository;
 
