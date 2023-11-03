@@ -31,7 +31,10 @@ public class AuthorizationJwt : IAuthorizationJwt
     private List<Claim> GetClaims(IEnumerable<string> roles, string userName)
     {
         var claims = new List<Claim> { new(ClaimTypes.Name, userName) };
-        claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+        if (roles is not null)
+        {
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+        }
         return claims;
     }
 

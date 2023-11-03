@@ -1,3 +1,4 @@
+using Common.Jwt.Authorization;
 using FluentValidation;
 using MediatR;
 using StoreProducts.CoreService.Product.CommandHandler;
@@ -21,6 +22,8 @@ builder.Services.ConfigureJwt(builder.Configuration);
 builder.Services.SingletonCrudManager();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddMediatR(typeof(ProductCommandHandler));
+
+builder.Services.AddSingleton<IAuthorizationJwt, AuthorizationJwt>();
 
 builder.Services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>();
 builder.Services.BeforeRequestInPipeLine();

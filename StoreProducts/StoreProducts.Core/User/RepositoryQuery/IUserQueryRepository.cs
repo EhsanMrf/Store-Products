@@ -6,5 +6,5 @@ namespace StoreProducts.Core.User.RepositoryQuery;
 
 public interface IUserQueryRepository :ITransientService
 {
-    Task<ServiceResponse<bool>> Login(UserLoginQuery  query);
+    Task<ServiceResponse<string>> Login(UserLoginQuery  query);
 }

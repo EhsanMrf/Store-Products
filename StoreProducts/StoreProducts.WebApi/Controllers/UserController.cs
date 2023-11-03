@@ -18,7 +18,7 @@ namespace StoreProducts.WebApi.Controllers
 
 
         [HttpGet]
-        public Task<ServiceResponse<bool>> Login([FromQuery] UserLoginQuery input) => _mediator.Send(input);
+        public Task<ServiceResponse<string>> Login([FromQuery] UserLoginQuery input) => _mediator.Send(input);
 
     }
 }

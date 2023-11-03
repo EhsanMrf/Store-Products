@@ -6,7 +6,7 @@ using StoreProducts.Core.User.RepositoryQuery;
 
 namespace StoreProducts.CoreService.User.Query;
 
-public class UserQueryHandler :BaseService,IRequestHandler<UserLoginQuery,ServiceResponse<bool>>
+public class UserQueryHandler :BaseService,IRequestHandler<UserLoginQuery,ServiceResponse<string>>
 {
     private readonly IUserQueryRepository _userQueryRepository;
 
@@ -15,7 +15,7 @@ public class UserQueryHandler :BaseService,IRequestHandler<UserLoginQuery,Servic
         _userQueryRepository = userQueryRepository;
     }
 
-    public async Task<ServiceResponse<bool>> Handle(UserLoginQuery request, CancellationToken cancellationToken)
+    public async Task<ServiceResponse<string>> Handle(UserLoginQuery request, CancellationToken cancellationToken)
     {
         return await _userQueryRepository.Login(request);
     }
