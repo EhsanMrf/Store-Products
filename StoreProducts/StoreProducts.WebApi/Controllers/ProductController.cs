@@ -1,5 +1,6 @@
 ﻿using Common.Response;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StoreProducts.Core.Product.Command;
 using StoreProducts.Core.Product.Entity;
@@ -8,6 +9,7 @@ namespace StoreProducts.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -18,7 +20,7 @@ namespace StoreProducts.WebApi.Controllers
         }
 
         [HttpPost]
-        public Task<ServiceResponse<Product>> Create([FromQuery]CreateProductCommand input)
+        public Task<ServiceResponse<Product>> Create(CreateProductCommand input)
         {
             return _mediator.Send(input);
         } 
