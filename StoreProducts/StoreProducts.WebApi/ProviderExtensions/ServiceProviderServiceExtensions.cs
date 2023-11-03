@@ -1,10 +1,13 @@
-﻿using Common.Jwt;
+﻿using System.Text;
+using Common.Jwt;
 using Common.OperationCrud;
 using Common.TransientService;
 using MediatR;
 using MediatR.Pipeline;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using StoreProducts.Core.Product.Entity;
 using StoreProducts.Core.User.Entity;
@@ -53,6 +56,29 @@ public static class ServiceProviderServiceExtensions
                 }
             });
         });
+    }
+
+    public static void ConfigureJwt(this IServiceCollection services, IConfiguration configuration)
+    {
+        var jwtConfig = configuration.GetSection("jwtConfig").Get<JwtConfig>();
+        services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtConfig.ValidIssuer,
+                    ValidAudience = jwtConfig.ValidAudience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.Secret))
+                };
+            });
     }
 
     public static void InjectScope(this IServiceCollection services)

@@ -17,6 +17,7 @@ builder.Services.ConfigurationSwaggerGe(builder.Configuration);
 builder.Services.DatabaseContext(builder.Configuration.GetSection("Connection").Value);
 builder.Services.InternalizeDataBase();
 builder.Services.InjectScope();
+builder.Services.ConfigureJwt(builder.Configuration);
 builder.Services.SingletonCrudManager();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddMediatR(typeof(ProductCommandHandler));
@@ -35,6 +36,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
