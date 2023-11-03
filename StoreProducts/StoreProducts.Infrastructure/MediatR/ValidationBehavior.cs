@@ -1,10 +1,10 @@
-﻿using Common.Response;
+﻿using System.Net;
+using Common.Response;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System.Net;
 
-namespace StoreProducts.Infrastructure.PipelineBehavior
+namespace StoreProducts.Infrastructure.MediatR
 {
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : class, IRequest<TResponse>
     {
