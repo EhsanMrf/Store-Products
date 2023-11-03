@@ -1,9 +1,12 @@
 using Common.Jwt.Authorization;
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using StoreProducts.CoreService.Product.CommandHandler;
+using StoreProducts.Infrastructure.Database;
 using StoreProducts.Infrastructure.Mapper;
 using StoreProducts.Infrastructure.Validation.Product.Create;
+using StoreProducts.WebApi;
 using StoreProducts.WebApi.ProviderExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UpgradeDatabase();
 
 app.UseHttpsRedirection();
 

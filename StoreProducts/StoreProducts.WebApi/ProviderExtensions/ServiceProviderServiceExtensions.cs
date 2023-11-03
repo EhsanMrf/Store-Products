@@ -7,6 +7,7 @@ using MediatR.Pipeline;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using StoreProducts.Core.Product.Entity;
@@ -114,6 +115,13 @@ public static class ServiceProviderServiceExtensions
     public static void DatabaseContext(this IServiceCollection services, string connection)
     {
         services.AddDbContext<DatabaseContext>(x => x.UseSqlServer(connection));
+    }
+
+    public static void UpgradeDatabase(this WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+        db.Database.Migrate();
     }
 
     public static void BeforeRequestInPipeLine(this IServiceCollection services)
