@@ -29,8 +29,8 @@
             return new Core.User.Entity.User
             {
                 FullName = FullName,
-                UserName = UserName,
-                Email = UserName,
+                UserName = Email,
+                Email = Email,
             };
         }
     }

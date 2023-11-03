@@ -10,8 +10,8 @@ public class UserRegisterCommandValidator :AbstractValidator<UserRegisterCommand
         RuleFor(x => x.FullName).NotEmpty();
         RuleFor(x => x.FullName).MinimumLength(4);
 
-        RuleFor(x => x.UserName).NotEmpty();
-        RuleFor(x => x.UserName).MinimumLength(4);
+        RuleFor(x => x.Email).NotEmpty();
+        RuleFor(x => x.Email).EmailAddress();
 
         RuleFor(x => x.Password).NotEmpty();
         RuleFor(x => x.Password).MinimumLength(5);

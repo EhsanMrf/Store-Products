@@ -18,7 +18,7 @@ public class UserRegisterRepository :IUserRegisterRepository
 
     public async Task<bool> UserRegister(UserRegisterCommand command)
     {
-        var user = _userBuilder.WithUserName(command.UserName).WithFullName(command.FullName).Build();
+        var user = _userBuilder.WithEmail(command.Email).WithFullName(command.FullName).Build();
         var identityResult = await _userManager.CreateAsync(user, command.Password);
         return identityResult.Succeeded;
     }
