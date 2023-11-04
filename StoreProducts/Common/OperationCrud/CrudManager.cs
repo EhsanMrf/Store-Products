@@ -81,6 +81,9 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
     {
         return await dbContext.Set<T>().Where(predicate).Select(predicateSelect).FirstOrDefaultAsync();
     }
+
+    public DbSet<T> GetEntity()=> dbContext.Set<T>();
+
 }
 
 public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId> where TId : struct, IComparable where TDatabase : DbContext
@@ -93,4 +96,5 @@ public interface ICrudManager<T, in TId, in TDatabase> where T : BaseEntity<TId>
     Task<ServiceResponse<T>> GetById(TId id);
     Task<bool> HasRecord(Expression<Func<T, bool>> predicate);
     Task<TResult?> SelectByPredicate<TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> predicateSelect);
+    DbSet<T> GetEntity();
 }

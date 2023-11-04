@@ -13,7 +13,7 @@ using Microsoft.OpenApi.Models;
 using StoreProducts.Core.Product.Entity;
 using StoreProducts.Core.User.Entity;
 using StoreProducts.Infrastructure.Database;
-using StoreProducts.Infrastructure.Date.Product.Command;
+using StoreProducts.Infrastructure.Date.Product;
 using StoreProducts.Infrastructure.MediatR;
 using StoreProducts.Infrastructure.Product.Builder;
 
