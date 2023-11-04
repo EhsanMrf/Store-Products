@@ -5,17 +5,19 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2F389747-157E-475D-8ED5-E5459FC12491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{CC905ED6-CEE8-4F6B-9BAD-390924C1A159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{CC905ED6-CEE8-4F6B-9BAD-390924C1A159}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProducts.Core", "StoreProducts.Core\StoreProducts.Core.csproj", "{DF86ABBA-014A-498D-84B2-8070B1802218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.Core", "StoreProducts.Core\StoreProducts.Core.csproj", "{DF86ABBA-014A-498D-84B2-8070B1802218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProducts.CoreService", "StoreProducts.CoreService\StoreProducts.CoreService.csproj", "{8B6C8B2B-6BAE-4773-B45F-C8EADFED237C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.CoreService", "StoreProducts.CoreService\StoreProducts.CoreService.csproj", "{8B6C8B2B-6BAE-4773-B45F-C8EADFED237C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProducts.Infrastructure", "StoreProducts.Infrastructure\StoreProducts.Infrastructure.csproj", "{8CF6E273-DBBE-48B1-8EDA-8F15DD753597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.Infrastructure", "StoreProducts.Infrastructure\StoreProducts.Infrastructure.csproj", "{8CF6E273-DBBE-48B1-8EDA-8F15DD753597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProducts.Infrastructure.Date", "StoreProducts.Infrastructure.Date\StoreProducts.Infrastructure.Date.csproj", "{14FFE797-0ABE-4DB9-B2F9-F761C7F118DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.Infrastructure.Date", "StoreProducts.Infrastructure.Date\StoreProducts.Infrastructure.Date.csproj", "{14FFE797-0ABE-4DB9-B2F9-F761C7F118DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProducts.WebApi", "StoreProducts.WebApi\StoreProducts.WebApi.csproj", "{F71B5EF6-A818-439E-A33E-B2FDB447EECF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.WebApi", "StoreProducts.WebApi\StoreProducts.WebApi.csproj", "{F71B5EF6-A818-439E-A33E-B2FDB447EECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroreProduct.Test", "StroreProduct.Test\StroreProduct.Test.csproj", "{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{F71B5EF6-A818-439E-A33E-B2FDB447EECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F71B5EF6-A818-439E-A33E-B2FDB447EECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F71B5EF6-A818-439E-A33E-B2FDB447EECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
