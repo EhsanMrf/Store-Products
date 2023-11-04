@@ -13,10 +13,10 @@ public class AuthorizationJwt : IAuthorizationJwt
     public AuthorizationJwt(IConfiguration configuration) => _configuration = configuration;
     private JwtConfig GetJwtConfigByAppSetting() => _configuration.GetSection("JwtConfig").Get<JwtConfig>();
 
-    public string CreateToken(IEnumerable<string> roles, string userName)
+    public string CreateToken(IEnumerable<string> roles, UserTransfer userTransfer)
     {
         var signingCredentials = GetSigningCredentials();
-        var claims = GetClaims(roles, userName);
+        var claims = GetClaims(roles, userTransfer);
         var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
         return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
     }
@@ -28,9 +28,13 @@ public class AuthorizationJwt : IAuthorizationJwt
         return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
     }
 
-    private List<Claim> GetClaims(IEnumerable<string> roles, string userName)
+    private List<Claim> GetClaims(IEnumerable<string> roles, UserTransfer userTransfer)
     {
-        var claims = new List<Claim> { new(ClaimTypes.Name, userName) };
+        var claims = new List<Claim>
+        {
+            new("IdentityUser", userTransfer.IdentityUser),
+            new("Email", userTransfer.Email),
+        };
         if (roles is not null)
         {
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
@@ -46,6 +50,7 @@ public class AuthorizationJwt : IAuthorizationJwt
             audience: GetJwtConfigByAppSetting().ValidAudience,
             claims: claims,
             expires: DateTime.Now.AddMinutes(Convert.ToDouble(GetJwtConfigByAppSetting().ExpiresIn)),
+
             signingCredentials: signingCredentials
         );
     }
