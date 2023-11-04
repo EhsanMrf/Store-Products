@@ -9,4 +9,5 @@ public class Product :BaseEntity<int>
     public string ManufactureEmail { get; set; }
     public bool IsAvailable { get; set; }
     public DateTime ProduceDate { get; set; }
+    public int CreateByUserId { get; set; }
 }

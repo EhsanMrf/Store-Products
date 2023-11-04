@@ -7,4 +7,5 @@ public class User:IdentityUser<int>
 {
     public string FullName { get; set; }
     public UserType UserType { get; set; }
+    public Guid Identity { get; set; }
 }
