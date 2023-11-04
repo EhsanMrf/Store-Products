@@ -6,4 +6,5 @@ public interface IPackageMessage :ITransientServiceInfrastructure
 {
     string InvalidCreateProduct();
     public string InvalidUpdateProduct();
+    public string NotCreatorProduct();
 }
