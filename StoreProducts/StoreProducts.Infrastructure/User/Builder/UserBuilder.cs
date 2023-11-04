@@ -31,6 +31,7 @@
                 FullName = FullName,
                 UserName = Email,
                 Email = Email,
+                Identity = Guid.NewGuid()
             };
         }
     }
