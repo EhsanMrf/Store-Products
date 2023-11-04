@@ -7,6 +7,7 @@ public class ResponseHelper
     public static ServiceResponse Success(int statusCode, string message) => Response(statusCode, message);
 
     public static ServiceResponse<T> Success<T>(T date, int statusCode, string message) => Response(date, statusCode, message);
+    public static ServiceResponse<DataList<T>> Success<T>(DataList<T> date, int statusCode, string message) => Response(date, statusCode, message);
 
     public static ServiceResponse Invalid(int statusCode, string message) => Response(statusCode, message);
 
@@ -42,6 +43,16 @@ public class ResponseHelper
             Message = message,
             StatusCode = statusCode
         };
+    } 
+    public static ServiceResponse<DataList<T>> Response<T>(DataList<T> data, int statusCode, string message)
+    {
+        return new ServiceResponse<DataList<T>>
+        {
+            Data = data,
+            Message = message,
+            StatusCode = statusCode
+        };
     }
+
 
 }

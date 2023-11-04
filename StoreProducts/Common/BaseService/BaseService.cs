@@ -14,6 +14,11 @@ namespace Common.BaseService
         {
             return ResponseHelper.Success(date, statusCode, message);
         }
+        
+        public ServiceResponse<DataList<T>> Success<T>(DataList<T> date, int statusCode = (int)HttpStatusCode.OK, string message = nameof(HttpStatusCode.OK))
+        {
+            return ResponseHelper.Success(date, statusCode, message);
+        }
 
         public ServiceResponse Invalid(int statusCode = (int)HttpStatusCode.BadRequest, string message = nameof(HttpStatusCode.BadRequest))
         {

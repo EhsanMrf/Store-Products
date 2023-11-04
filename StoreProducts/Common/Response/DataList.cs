@@ -1,34 +1,17 @@
-﻿using System.Collections;
-using Common.Input;
-
-namespace Common.Response
-{ public class DataList<T> : IReadOnlyList<T>
+﻿namespace Common.Response
+{ public class DataList<T>
     {
-        private readonly IList<T> _subset;
-        public DataList(IEnumerable<T> items, int count, int pageNumber, int pageSize)
+        public IEnumerable<T> Items { get; set; }
+        public int Page { get; set; }
+        public int TotalPage { get; set; }
+        public int TotalCount { get; set; }
+
+        public DataList(IEnumerable<T> items, int totalCount, int page, int pageSize)
         {
-            PageNumber = pageNumber;
-            TotalPages = (int)Math.Ceiling(count / (double)pageSize);
-            _subset = items as IList<T> ?? new List<T>(items);
-        }
-
-        public int PageNumber { get; }
-
-        public int TotalPages { get; }
-
-        public bool IsFirstPage => PageNumber == 1;
-
-        public bool IsLastPage => PageNumber == TotalPages;
-
-        public int Count => _subset.Count;
-
-        public T this[int index] => _subset[index];
-
-        public IEnumerator<T> GetEnumerator() => _subset.GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return _subset.GetEnumerator();
+            Page = page;
+            TotalPage = (int)Math.Ceiling(totalCount / (double)pageSize);
+            Items = items;
+            TotalCount=totalCount;
         }
     }
 }
