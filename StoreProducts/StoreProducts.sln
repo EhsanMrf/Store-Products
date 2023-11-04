@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreProducts.WebApi", "StoreProducts.WebApi\StoreProducts.WebApi.csproj", "{F71B5EF6-A818-439E-A33E-B2FDB447EECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroreProduct.Test", "StroreProduct.Test\StroreProduct.Test.csproj", "{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProducts.Test", "StroreProduct.Test\StoreProducts.Test.csproj", "{43B98DA0-DBFE-4A2F-B3CB-30D70DED5088}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
