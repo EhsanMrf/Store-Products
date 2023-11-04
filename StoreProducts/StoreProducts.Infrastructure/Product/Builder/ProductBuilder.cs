@@ -9,6 +9,7 @@ public class ProductBuilder : IProductBuilder
     private string ManufactureEmail { get; set; }
     private bool IsAvailable { get; set; }
     private DateTime ProduceDate { get; set; }
+    public int CreateByUserId { get; set; }
 
     public IProductBuilder WithName(string name)
     {
