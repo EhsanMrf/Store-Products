@@ -21,6 +21,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
     public async Task<bool> Insert(T entity)
     {
         Utils.NotNull(entity);
+        entity.CreateDateTime=DateTime.Now;
         dbContext.Entry(entity).State = EntityState.Added;
         return await dbContext.SaveChangesAsync() > 0;
     }
@@ -37,6 +38,7 @@ public class CrudManager<T, TId, TDatabase> : ICrudManager<T, TId, TDatabase> wh
         var oldEntity = await GetById(id);
         Utils.NotNull(oldEntity);
         var entity = _mapper.Map(inputEntity, oldEntity.Data);
+        entity.UpdateDateTime= DateTime.Now;
         dbContext.Entry(entity).State = EntityState.Modified;
         var save = await dbContext.SaveChangesAsync() > 0;
         Utils.StateOperation(save);
