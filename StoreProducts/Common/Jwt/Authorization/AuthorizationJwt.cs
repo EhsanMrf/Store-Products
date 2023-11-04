@@ -33,7 +33,7 @@ public class AuthorizationJwt : IAuthorizationJwt
         var claims = new List<Claim>
         {
             new("IdentityUser", userTransfer.IdentityUser),
-            new("Email", userTransfer.Email),
+            new(ClaimTypes.Name, userTransfer.Email),
         };
         if (roles is not null)
         {
