@@ -1,4 +1,5 @@
 ﻿using Common.BaseService;
+using Common.Jwt;
 using Common.Jwt.Authorization;
 using Common.Response;
 using Microsoft.AspNetCore.Identity;
@@ -25,7 +26,7 @@ namespace StoreProducts.Infrastructure.Date.User.Query
             var logIn = await _signInManager.PasswordSignInAsync(user, query.Password, false, true);
             var token = string.Empty;
             if (logIn.Succeeded)
-                token = _authorizationJwt.CreateToken(null, user.FullName);
+                token = _authorizationJwt.CreateToken(null, new UserTransfer(user.Email,user.Identity.ToString()));
             return token;
         }
     }
