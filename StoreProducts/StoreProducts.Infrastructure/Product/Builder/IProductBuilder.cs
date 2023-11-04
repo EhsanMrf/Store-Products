@@ -9,5 +9,6 @@ public interface IProductBuilder : ITransientServiceInfrastructure
     IProductBuilder WithManufactureEmail(string manufactureEmail);
     IProductBuilder WithAvailable(bool available);
     IProductBuilder WithProduceDate(DateTime produceDate);
+    IProductBuilder WithCreateUserById(int createByUserId);
     Core.Product.Entity.Product Build();
 }

@@ -40,6 +40,12 @@ public class ProductBuilder : IProductBuilder
         ProduceDate = produceDate;
         return this;
     }
+    
+    public IProductBuilder WithCreateUserById(int createByUserId)
+    {
+        CreateByUserId= createByUserId;
+        return this;
+    }
 
     public Core.Product.Entity.Product Build()
     {
@@ -51,6 +57,7 @@ public class ProductBuilder : IProductBuilder
             ManufactureEmail = ManufactureEmail,
             ManufacturePhone = ManufacturePhone,
             ProduceDate = ProduceDate,
+            CreateByUserId = CreateByUserId,
         };
     }
 }
