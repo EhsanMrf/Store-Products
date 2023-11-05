@@ -22,7 +22,7 @@ namespace StoreProducts.WebApi.Controllers
 
         [HttpPost]
         [Authorize]
-        public Task<ServiceResponse<Product>> Create(CreateProductCommand input)
+        public Task<ServiceResponse<Product>> Create([FromQuery]CreateProductCommand input)
         {
             return _mediator.Send(input);
         } 
