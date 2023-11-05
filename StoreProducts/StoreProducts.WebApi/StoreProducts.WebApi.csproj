@@ -15,6 +15,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
     <PackageReference Include="Scrutor" Version="4.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
@@ -24,6 +25,8 @@
     <ProjectReference Include="..\StoreProducts.CoreService\StoreProducts.CoreService.csproj" />
     <ProjectReference Include="..\StoreProducts.Infrastructure.Date\StoreProducts.Infrastructure.Date.csproj" />
     <ProjectReference Include="..\StoreProducts.Infrastructure\StoreProducts.Infrastructure.csproj" />
+    <InternalsVisibleTo Include="..\StoreProducts.Test" />
+
   </ItemGroup>
 
 </Project>

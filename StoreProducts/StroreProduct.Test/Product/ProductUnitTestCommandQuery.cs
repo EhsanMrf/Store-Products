@@ -1,9 +1,13 @@
+using Common.OperationCrud;
 using FluentAssertions;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using StoreProducts.Core.Product.Command;
 using StoreProducts.Core.Product.Entity;
 using StoreProducts.Core.User.Command;
+using StoreProducts.Infrastructure.Database;
 
-namespace StoreProducts.Test;
+namespace StoreProducts.Test.Product;
 
 public class ProductUnitTestCommandQuery
 {

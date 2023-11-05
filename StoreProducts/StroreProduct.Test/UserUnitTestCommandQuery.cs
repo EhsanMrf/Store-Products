@@ -10,7 +10,7 @@ namespace StoreProducts.Test
         [Fact]
         public void ProductShouldNotNull()
         {
-            var course = () => { var product = new Product(); };
+            var course = () => { var product = new Core.Product.Entity.Product(); };
             course.Should().NotBeNull();
         }
 
