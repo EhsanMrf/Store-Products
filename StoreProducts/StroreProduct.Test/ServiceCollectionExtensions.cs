@@ -21,7 +21,8 @@ namespace StoreProducts.Test
                 .AddEntityFrameworkStores<DatabaseContext>()
                 .AddDefaultTokenProviders();
 
-            serviceCollection.AddDbContext<DatabaseContext>(x => x.UseSqlServer("Data Source=SARDAR\\SQL2019;Initial Catalog=ProductStr;Persist Security Info=True;TrustServerCertificate=True;User ID=sa;Password=Ehsan..1374"));
+            serviceCollection
+                .AddDbContext<DatabaseContext>(x => x.UseSqlServer(""));
 
             return serviceCollection;
         }
