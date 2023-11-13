@@ -1,4 +1,6 @@
-Architecture used in this project : Clean - Cqrs
+Architecture used in this project
+  Clean - Cqrs
+
 This project uses the following technologies
   SQL-SRV
   EFCore
