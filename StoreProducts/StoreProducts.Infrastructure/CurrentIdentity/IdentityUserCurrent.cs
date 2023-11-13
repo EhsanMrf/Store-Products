@@ -20,7 +20,8 @@ public abstract class IdentityUserCurrent :BaseService
     {
         var identityUser = _accessor.HttpContext!.User.Claims.FirstOrDefault(x => x.Type.Equals("IdentityUser")).Value;
         var userBySelect = GetUserBySelect();
-        var firstOrDefaultAsync = await _userManager.Users.Where(x=>x.Identity.Equals(identityUser)).Select(userBySelect).FirstOrDefaultAsync();
+        var firstOrDefaultAsync = await _userManager.Users
+            .Where(x=>x.Identity.Equals(identityUser)).Select(userBySelect).FirstOrDefaultAsync();
         return firstOrDefaultAsync;
     }
 
